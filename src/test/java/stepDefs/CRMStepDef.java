@@ -1,9 +1,85 @@
 package stepDefs;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class CRMStepDef {
+	
+//	@BeforeAll
+//	public static void setUpBrowser()
+//	{
+//		System.out.println("Before ALL scenarios!!!");
+//	}
+//	
+//	@AfterAll
+//	public static void closeBrowser()
+//	{
+//		System.out.println("After ALL scenarios!!!");
+//
+//	}
+	
+//	@Before("@SmokeTest")
+//	public static void setUpDataSmoke()
+//	{
+//		System.out.println("Before EACH smoke scenarios!!!");
+//	}
+//	
+//	@After("@SmokeTest")
+//	public static void closeDBSmoke()
+//	{
+//		System.out.println("After EACH smoke scenarios!!!");
+//	}
+//	
+//	@Before("@RegressionTest")
+//	public static void setUpDataReg()
+//	{
+//		System.out.println("Before EACH reg scenarios!!!");
+//	}
+//	
+//	@After("@RegressionTest")
+//	public static void closeDBReg()
+//	{
+//		System.out.println("After EACH reg scenarios!!!");
+//	}
+	
+	@Before(value= "@SmokeTest", order=2)
+	public void setupDataSomke()
+	{
+		System.out.println("Data Set Up Smoke");
+	}
+	
+	
+	@Before(value = "@SmokeTest", order=1)
+	public void readFromPropertySmoke()
+	{
+		System.out.println("Read From Property Smoke");
+	}
+	
+	@Before(value = "@RegressionTest" ,order=2)
+	public void setupDataReg()
+	{
+		System.out.println("Data Set Up reg");
+	}
+	
+	
+	@Before(value = "@RegressionTest", order=1)
+	public void readFromPropertyReg()
+	{
+		System.out.println("Read From Property Reg");
+	}
+	
+	
+//	@Before(order=3)
+//	public void initBrowset()
+//	{
+//		System.out.println("init Browset");
+//	}
+	
+	
 
 	@Given("User is logged in")
 	public void user_is_logged_in() {
