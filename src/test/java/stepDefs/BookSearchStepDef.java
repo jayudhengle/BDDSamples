@@ -60,5 +60,4 @@ public class BookSearchStepDef {
 			scenario.attach(img, "image/png", "FailedScenarioImage");
 		}
 	}
-	
 }

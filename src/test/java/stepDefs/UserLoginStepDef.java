@@ -15,14 +15,19 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class UserLoginStepDef 
 {
 	WebDriver driver;
+	ChromeOptions options;
 	
 	@Given("User is on Login Page")
 	public void user_is_on_login_page() {
-		driver = new ChromeDriver();
+
+		options = new ChromeOptions();
+		options.addArguments("--incognito");
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().deleteAllCookies();

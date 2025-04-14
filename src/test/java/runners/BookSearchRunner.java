@@ -24,6 +24,4 @@ public class BookSearchRunner extends AbstractTestNGCucumberTests {
 	{
 		return super.scenarios();
 	}
-	
-	
 }
